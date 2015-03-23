@@ -1,0 +1,20 @@
+Linux n15 2.6.32-431.17.1.el6.655g0000.x86_64 #1 SMP Thu May 8 03:46:16 EDT 2014 x86_64 x86_64 x86_64 GNU/Linux
+Fri Aug  1 12:44:17 PDT 2014
+PBS Job ID: 106734[2].*
+PBS Task ID: 2
+1st Parameter: 50
+2nd Parameter: 60
+3rd Parameter: 70
+4th Parameter: 80
+
+*Note:* This text is being printed via myscript.py stdout
+	Input params are: ['50', '60', '70', '80']
+	Input file is: /home/[YOUR_USERNAME]/sge_data/file1.txt
+
+*Note:* This text is being printed via myscript.py stdout
+	Input params are: ['50', '60', '70', '80']
+	Input file is: /home/[YOUR_USERNAME]/sge_data/file2.txt
+
+*Note:* This text is being printed via myscript.py stdout
+	Input params are: ['50', '60', '70', '80']
+	Input file is: /home/[YOUR_USERNAME]/sge_data/file3.txt

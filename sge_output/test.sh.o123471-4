@@ -1,0 +1,20 @@
+Linux n15 2.6.32-504.el6.660g0000.x86_64 #1 SMP Wed Oct 15 22:34:16 EDT 2014 x86_64 x86_64 x86_64 GNU/Linux
+Thu Dec  4 11:19:21 PST 2014
+PBS Job ID: 123471[4].*
+PBS Task ID: 4
+1st Parameter: 13000
+2nd Parameter: 14000
+3rd Parameter: 15000
+4th Parameter: 16000
+
+*Note:* This text is being printed via myscript.py stdout
+	Input params are: ['13000', '14000', '15000', '16000']
+	Input file is: /home/[YOUR_USERNAME]/example_sge_job/sge_data/file1.txt
+
+*Note:* This text is being printed via myscript.py stdout
+	Input params are: ['13000', '14000', '15000', '16000']
+	Input file is: /home/[YOUR_USERNAME]/example_sge_job/sge_data/file2.txt
+
+*Note:* This text is being printed via myscript.py stdout
+	Input params are: ['13000', '14000', '15000', '16000']
+	Input file is: /home/[YOUR_USERNAME]/example_sge_job/sge_data/file3.txt
