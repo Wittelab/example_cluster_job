@@ -1,14 +1,13 @@
 #!/bin/bash
 #
-# This file will make a ssh key login and optionally create a nickname for the remote machine in your ssh config 
-echo -e "Please enter the ssh command that you would normally use to access the desired remote machine:"
+# This script make a ssh key login and optionally create a nickname for the remote machine in your ssh config 
+echo -e "Please enter the ssh command that you would normally use to access the desired remote machine (cluster):"
 read  -p "> " ssh_cmd
 ssh_cmd=$(echo $ssh_cmd | sed "s/ssh //" | tr "@" " ")
 read -a arr <<< $ssh_cmd
-
-echo -e "username: \033[1m${arr[0]}\033[0m"
-echo -e "machine:  \033[1m${arr[1]}\033[0m"
-
+echo -e "username: \033[1;34m${arr[0]}\033[0m"
+echo -e "machine:  \033[1;34m${arr[1]}\033[0m"
+    
 read -p "Is this correct? [y/N] " yn
 case $yn in
     [Nn]* ) echo "Please try again."; exit;;
@@ -25,13 +24,13 @@ fi
 echo -e "\033[1mTransfering your public key to the remote machine.\nPlease use default settings and type your password if neccesary.\033[0m"
 cat ~/.ssh/id_rsa.pub | ssh ${arr[0]}@${arr[1]} 'cat >> .ssh/authorized_keys'
 
-read -p "Would you like to create a ssh shortcut for this computer (eg. ssh cluster)? [y/N] " yn
-case $yn in
-    [Yy]* )
+#read -p "Would you like to create a ssh shortcut for this computer (eg. ssh cluster)? [y/N] " yn
+#case $yn in
+#    [Yy]* )
         while true
         do
             read -p "Please give this computer a nickname: " nick;
-            echo -e "You entered \033[1m${nick}\033[0m. Is this correct? [y/N/c] \c";
+            echo -e "You entered \033[1;34m${nick}\033[0m. Is this correct? [y/N/c] \c";
             read ync
             case $ync in
                 [Yy]* ) echo -e "Host ${nick}\n\tUser\t\t${arr[0]}\n\tHostName\t${arr[1]}\n" >> ~/.ssh/config; break;;
@@ -39,6 +38,6 @@ case $yn in
                 * ) echo "Sorry, please try again";;
             esac
         done
-esac
+#esac
 
 echo -e "All finished. Enjoy!"

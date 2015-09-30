@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+#PBS -S /bin/bash
+#PBS -o <%= output_dir %>
+#PBS -e <%= error_dir %>
+#PBS -t 1-<%= num_nodes %>
+
+# Print some useful information to the output file
+uname -a
+date
+echo "Project Directory: <%= project_dir %>"
+echo "PBS Job ID:        $PBS_JOBID"
+echo "PBS Task ID:       $PBS_ARRAYID"
+
+# Navigate to the project directory and give the script executable permissions
+cd <%= project_dir %>
+chmod a+x <%= File.basename script_call%>
+
+# Read the job parameters from the 'settings.txt' file
+#  and pass them as paramaters to the script (this should include working files)
+read -a PARAMS <<< $(sed '/#/d;' <%= File.basename settings_file %> | sed "s/\t/ /g;${PBS_ARRAYID}q;d")
+
+# Run the script on this node
+<%= File.basename script_call %> ${PARAMS[@]}
