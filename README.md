@@ -2,8 +2,8 @@ Submitting a Cluster Job
 ========
 
 Its as simple as:
-`chmod +x .sh`
-`./delagator`
+`chmod +x .sh`  
+`./delagator`  
 
 
 The first time you run delagator, it will configure itself with your input.  
